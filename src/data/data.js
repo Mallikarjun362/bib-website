@@ -1,0 +1,3 @@
+export const title = "BIB Blockchain bootcamp";
+export const subtitle = "IIT Bhilai";
+export const description = "3-month online blockchain bootcamp starting from May 14th. Learn about Blockchain, Bitcoin, Ethereum, smart contracts, and layer2 blockchain solutions from expert instructors. Work on projects and assignments, and get the chance to participate in a blockchain internship upon successful completion.";
