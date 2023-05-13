@@ -76,7 +76,7 @@ const SessionTile = ({ data }) => {
     <MyRow
       k="Topics"
       v={
-        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
           {data['Topics-list'].split(',').map((ele) => (
             <div
               style={{
