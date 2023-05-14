@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 // Secondary imports
 import HomePage from './pages/HomePage';
-
+import './index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

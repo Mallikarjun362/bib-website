@@ -32,7 +32,10 @@ const SectionTimeline = () => {
   return (
     <div>
       <br />
-      <center style={{ fontSize: '50px', color: '#fff8' }}>
+      <center
+        className="lg:text-[3vw] sm:text-[5vw] text-[5vw]"
+        style={{ color: '#fff8' }}
+      >
         Summer blockchain bootcamp 2023
       </center>
       <br />

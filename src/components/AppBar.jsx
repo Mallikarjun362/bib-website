@@ -18,12 +18,12 @@ const AppBar = () => {
           <img
             src={logo}
             alt="Logo"
-            style={{ maxHeight: '150px', height: '4vw', minHeight: '40px' }}
+            style={{ maxHeight: '200px', height: '5vw', minHeight: '60px' }}
           />
           <span
+            className="lg:text-[2.5vw] text-[8vw]"
             style={{
               fontFamily: "'EB Garamond', serif",
-              fontSize: 'max(25px, 2.5vw)',
               color: 'white',
               overflow: 'clip',
             }}

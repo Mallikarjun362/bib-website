@@ -23,11 +23,25 @@ const MyLink = ({ title, url }) => {
 };
 const MyRow = ({ k, v }) => {
   return (
-    <tr style={{ fontSize: '18px' }}>
-      <td style={{ fontSize: '23px' }}>{k}</td>
-      <td style={{ padding: '8px 15px' }}>:</td>
-      <td>{v}</td>
-    </tr>
+    <div
+      style={{ fontSize: '18px', margin: '10px 0px' }}
+      className="lg:flex flex-row"
+    >
+      <div
+        style={{
+          minWidth: '200px',
+          marginRight: '20px',
+          fontSize: '23px',
+          display: 'flex',
+          alignContent: 'flex-start',
+          justifyContent: 'space-between',
+        }}
+      >
+        <span>{k}</span>
+        <span>:</span>
+      </div>
+      <div className="sm: flex-wrap">{v}</div>
+    </div>
   );
 };
 
@@ -122,11 +136,11 @@ const SessionTile = ({ data }) => {
   // Resources table
   const res_list = parseCsvString(data['Resource-table']);
   const row_resources =
-    (res_list.length > 0) & data['Resources-table'] ? (
+    res_list.length > 0 ? (
       <MyRow
         k="Resources"
         v={
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
             {res_list.map((ele, idx) => (
               <MyLink title={ele[0]} url={ele[1]} key={idx} />
             ))}
@@ -156,6 +170,7 @@ const SessionTile = ({ data }) => {
   ) : null;
   const div_head = (
     <div
+      className="lg: sm:"
       style={{
         color: 'white',
         fontSize: '25px',
@@ -163,7 +178,6 @@ const SessionTile = ({ data }) => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        width: '20%',
         opacity: '0.7',
       }}
     >
@@ -173,16 +187,23 @@ const SessionTile = ({ data }) => {
     </div>
   );
   const div_main = (
-    <div style={{ width: '60%' }}>
+    <div className="sm:w-[100%] lg:w-[70%]">
       {speaker_name}
-      <br />
-      <table>
-        {row_topics_list}
-        {row_video_recording}
-        {row_resources}
-        {row_assignment_link}
-        {row_assignment_deadline}
-        {row_assignment_submission_link}
+      <table
+        style={{
+          borderCollapse: 'separate',
+          borderSpacing: '10px 10px',
+          width: '100%',
+        }}
+      >
+        <tbody style={{ width: '100%' }}>
+          {row_topics_list}
+          {row_video_recording}
+          {row_resources}
+          {row_assignment_link}
+          {row_assignment_deadline}
+          {row_assignment_submission_link}
+        </tbody>
       </table>
       {note_markdown}
     </div>
@@ -190,14 +211,11 @@ const SessionTile = ({ data }) => {
   // Main UI ==========================================================================================================
   return (
     <div
+      className="sm:w-[90vw] p-[25px] sm:pt-[50px] flex justify-around flex-col lg:flex-row lg:w-[60vw] "
       style={{
-        width: '60%',
-        padding: '30px 10px',
+        paddingTop: '50px',
         backgroundColor: '#fff3',
         borderRadius: '10px',
-        display: 'flex',
-        alignItems: 'center',
-        gap: '30px',
         position: 'relative',
         color: 'white',
       }}

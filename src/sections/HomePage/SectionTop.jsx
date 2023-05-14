@@ -4,17 +4,19 @@ import { title, subtitle, description } from '../../data/data';
 const SectionTop = () => {
   return (
     <div
+      className="lg:flex"
       style={{
-        display: 'flex',
-        color: 'white',
         alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white',
       }}
     >
-      <div style={{ width: '50%', padding: '5vw' }}>
+      {/* Div 1 */}
+      <div className="lg:w-[50%] lg:p-[3vw] sm: p-[20px]">
         <span
+          className="lg:text-[5vw] text-[10vw]"
           style={{
             fontFamily: "'Roboto Slab', serif",
-            fontSize: '5.5vw',
           }}
         >
           {title}
@@ -22,11 +24,14 @@ const SectionTop = () => {
         <br />
         <br />
         <br />
-        <span style={{ fontSize: '2vw', color: '#fff8' }}>{description}</span>
+        <span style={{ color: '#fff8' }} className="lg:text-[30px] text-[6vw]">
+          {description}
+        </span>
       </div>
+      {/* Div 2 */}
       <div
+        className="lg:w-[50%]"
         style={{
-          width: '50%',
           display: 'flex',
           justifyContent: 'center',
           paddingRight: '3vw',
