@@ -1,26 +1,8 @@
 import React from 'react';
-import { AiOutlineLink } from 'react-icons/ai';
+import MyLink from './MyLink';
 import ReactMarkdown from 'react-markdown';
+import SpeakerTile from './SpeakerTile';
 
-const MyLink = ({ title, url }) => {
-  return (
-    <a href={url} target="_blank">
-      <div
-        style={{
-          width: 'fit-content',
-          alignItems: 'center',
-          display: 'flex',
-          gap: '10px',
-          backgroundColor: '#fff4',
-          padding: '5px 10px',
-          borderRadius: '50px',
-        }}
-      >
-        <AiOutlineLink /> {title}
-      </div>
-    </a>
-  );
-};
 const MyRow = ({ k, v }) => {
   return (
     <div
@@ -188,7 +170,13 @@ const SessionTile = ({ data }) => {
   );
   const div_main = (
     <div className="sm:w-[100%] lg:w-[70%]">
-      {speaker_name}
+      <SpeakerTile
+        name={data['Speaker-name']}
+        image_url={data['Speaker-image-url']}
+        intro={data['Speaker-intro']}
+        linkedin={data['Speaker-linkedin-url']}
+        website={data['Speaker-website']}
+      />
       <table
         style={{
           borderCollapse: 'separate',
