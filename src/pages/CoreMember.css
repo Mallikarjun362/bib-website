@@ -1,0 +1,113 @@
+.CoreMemberContainer {
+  width: 85%;
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 5%;
+}
+
+.CoreMemberContainer h1 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #333;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px r4gba(0, 0, 0, 0.3);
+}
+
+.CoreMemberContainer .memberWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.CoreMemberContainer .memberWrapper img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.CoreMemberContainer .memberWrapper div {
+  display: flex;
+  flex-direction: column;
+}
+
+.CoreMemberContainer .memberWrapper p {
+  margin-top: 10px;
+  color: black;
+  font-size: 22px;
+  font-weight: bolder;
+}
+
+.CoreMemberContainer .memberWrapper h2 {
+  color: #333;
+  font-size: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.CoreMemberContainer .memberWrapper p:last-child {
+  font-size: 20px;
+  color: black;
+  margin-top: 2px;
+}
+
+.CoreMemberContainer .membersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-gap: 20px;
+}
+
+.CoreMemberContainer .memberCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-top: 50px;
+  width: 160px;
+}
+
+.CoreMemberContainer .memberCard img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+}
+
+.CoreMemberContainer .memberCard h2 {
+  margin-top: 0;
+  color: #333;
+  font-weight: bold;
+}
+
+.CoreMemberContainer .memberCard p {
+  font-size: 14px;
+  color: black;
+  margin-top: 3px;
+}
+
+@media (max-width: 467px) {
+  .CoreMemberContainer .membersGrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media ((min-width: 467px)) and (max-width: 767px) {
+  .CoreMemberContainer .membersGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Media query for screens larger than 767px and smaller than or equal to 1023px (Tablet devices) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .CoreMemberContainer .membersGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Media query for screens larger than or equal to 1024px (Desktop devices) */
+@media (min-width: 1024px) {
+  .CoreMemberContainer .membersGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
