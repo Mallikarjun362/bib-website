@@ -40,11 +40,11 @@ const Footer = () => {
       >
         <IconUrl
           icon={<RxTwitterLogo />}
-          url="https://twitter.com/BlockchainIITBH/status/1657025255301365764"
+          url="https://twitter.com/BlockchainIITBH/"
         />
         <IconUrl
           icon={<FaLinkedinIn />}
-          url="https://www.linkedin.com/feed/update/urn:li:activity:7062682573457547/"
+          url="https://www.linkedin.com/company/blockchain-at-iit-bhilai/"
         />
       </div>
     </footer>
