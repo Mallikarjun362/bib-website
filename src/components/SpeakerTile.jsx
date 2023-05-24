@@ -19,7 +19,7 @@ const SpeakerTile = ({ name, linkedin, image_url, website, intro }) => {
           style={{
             padding: '5px',
             border: 'solid white',
-            borderWidth: '5px',
+            borderWidth: '3px',
             borderRadius: '50%',
           }}
         >
@@ -27,7 +27,6 @@ const SpeakerTile = ({ name, linkedin, image_url, website, intro }) => {
             className="w-[20vw] h-[20vw] lg:w-[8vw] lg:h-[8vw]"
             style={{
               borderRadius: '50%',
-              borderWidth: '5px',
               overflow: 'hidden',
             }}
           >
