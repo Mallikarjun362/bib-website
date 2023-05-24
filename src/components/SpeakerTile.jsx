@@ -14,25 +14,33 @@ const SpeakerTile = ({ name, linkedin, image_url, website, intro }) => {
     >
       {/* Image */}
       {image_url ? (
+        // Border
         <div
-          className="w-[20vw] h-[20vw] lg:w-[20%] lg:h-[20%]"
           style={{
-            minHeight: '100px',
-            minWidth: '100px',
-            padding: '3px',
-            borderRadius: '50%',
-            borderWidth: '5px',
+            padding: '5px',
             border: 'solid white',
+            borderWidth: '5px',
+            borderRadius: '50%',
           }}
         >
           <div
-            className="w-[100%] h-[100%]"
+            className="w-[20vw] h-[20vw] lg:w-[8vw] lg:h-[8vw]"
             style={{
               borderRadius: '50%',
+              borderWidth: '5px',
               overflow: 'hidden',
             }}
           >
-            <img src={image_url} alt="" />
+            {/* Actual Image  */}
+            <img
+              src={image_url}
+              alt=""
+              style={{
+                height: '100%',
+                width: '100%',
+                objectFit: 'fill',
+              }}
+            />
           </div>
         </div>
       ) : null}
