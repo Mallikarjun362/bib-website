@@ -118,7 +118,7 @@ const SessionTile = ({ data }) => {
   // Resources table
   const res_list = parseCsvString(data['Resource-table']);
   const row_resources =
-    res_list.length > 0 ? (
+    res_list.length > 0 && data['Resource-table'] !== '' ? (
       <MyRow
         k="Resources"
         v={
