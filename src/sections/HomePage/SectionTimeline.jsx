@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import SessionTile from '../../components/SessionTile';
+import React, { useEffect, useState } from "react";
+import SessionTile from "../../components/SessionTile";
 
 function tableToJson(table) {
   var headers = table[0];
@@ -21,11 +21,14 @@ const SectionTimeline = () => {
   const [sessions, setSessions] = useState([]);
   useEffect(() => {
     fetch(
-      'https://script.google.com/macros/s/AKfycbx9PM_X4w9xZzOVO2Jzf_pZxhMtXBKWeSq_zJiYcgt0HA-mBBUiwuxECNatktoQMRAL0w/exec'
+      "https://script.google.com/macros/s/AKfycbygHUNKksozhUh5r1pCrVwhTMvsos_apPglJl9o8QI3IJlESnrJJh3h33Uh0cAuM4QVhQ/exec"
     )
-      .then((response) => response.json())
+      .then(async (response) => {
+        // console.log(await response.json())
+        return await response.json();
+      })
       .then((data) => {
-        setSessions(tableToJson(data.data));
+        setSessions(tableToJson(data));
       })
       .catch((error) => console.error(error));
   }, []);
@@ -34,19 +37,19 @@ const SectionTimeline = () => {
       <br />
       <center
         className="lg:text-[3vw] sm:text-[5vw] text-[5vw]"
-        style={{ color: '#fff8' }}
+        style={{ color: "#fff8" }}
       >
         Summer blockchain bootcamp 2023
       </center>
       <br />
       <div
         style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '50px',
-          gap: '30px',
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "50px",
+          gap: "30px",
         }}
       >
         {sessions.map((ele, idx, arr) => (

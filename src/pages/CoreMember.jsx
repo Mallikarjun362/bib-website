@@ -13,7 +13,7 @@ const members = [
     id: 3,
     name: 'Mallikarjun',
     Discipline: ' DSAI 2024',
-    image: 'https://picsum.photos/id/1016/200',
+    image: require('../assets/Members/Mallikarjun.jpg'),
   },
   {
     id: 4,

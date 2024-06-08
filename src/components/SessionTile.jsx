@@ -33,21 +33,20 @@ function getDayDiff(s) {
 
   if (diffDays < 0) {
     diffDays = Math.abs(diffDays);
-    if (diffDays == 1) {
+    if (diffDays === 1) {
       return '(1 day left)';
     } else {
       return `(${diffDays} days left)`;
     }
   } else {
-    if (diffDays == 0) {
+    if (diffDays === 0) {
       return '(Today)';
-    } else if (diffDays == 1) {
+    } else if (diffDays === 1) {
       return '(Yesterday)';
     } else {
       return `(${diffDays} days ago)`;
     }
   }
-  return '';
 }
 
 function parseCsvString(s) {
@@ -58,15 +57,6 @@ function parseCsvString(s) {
 
 // Main component ===============================================================================================================
 const SessionTile = ({ data }) => {
-  const csv_str = '';
-
-  // Speaker-name
-  const speaker_name = data['Speaker-name'] ? (
-    <div className="speaker" style={{ fontSize: '50px' }}>
-      {' '}
-      {data['Speaker-name']}{' '}
-    </div>
-  ) : null;
   // Topics-list
   const row_topics_list = data['Topics-list'] ? (
     <MyRow
@@ -90,6 +80,7 @@ const SessionTile = ({ data }) => {
     />
   ) : null;
   // Session-date
+  const _date = new Date(data['Session-date']);
   const session_date = data['Session-date'] ? (
     <div
       style={{
@@ -100,7 +91,7 @@ const SessionTile = ({ data }) => {
         opacity: '0.8',
       }}
     >
-      {data['Session-date']} {getDayDiff(data['Session-date'])}
+      {_date.getDate()}-{_date.getMonth()}-{_date.getFullYear()} {getDayDiff(data['Session-date'])}
     </div>
   ) : null;
   const row_video_recording = data['Video-recording-link'] ? (
